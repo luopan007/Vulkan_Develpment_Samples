@@ -2,8 +2,13 @@
 
 buildscript {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
@@ -15,8 +20,13 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
     }
 }
 
