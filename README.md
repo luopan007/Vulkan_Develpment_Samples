@@ -13,6 +13,6 @@ Vulkan开发实战详解配套书籍代码
 
 4. 编译shaderc, 命令如下
 
-‘‘‘Makefile
+‘‘‘
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_STL:=gnustl_static APP_ABI=all libshaderc_combined
 ’’’
