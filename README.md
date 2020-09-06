@@ -29,6 +29,9 @@ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_STL:=gnustl_static 
 ### 3. 国内网络代理问题
     1. 修改 build.gradle 中的 repositories --- 填写 阿里云的仓 ---  可以查询的地址为 ：https://maven.aliyun.com/mvn/guide 
 
+## Sample1_1在Mate20 Pro运行结果如下
+  ![avatar](Sample1_1/sample1_1.png)
+
 ## Vulkan的基本类型
 名称 | Vulkan类型 | 说明
 --- | --------- | ---
@@ -63,7 +66,14 @@ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_STL:=gnustl_static 
 顶点输入绑定描述 | VkVertexInputBindingDescription | 用于描述管线的顶点数据输入情况，包括绑定点编号、数据输入频率（比如每顶点一套数据）、<br>数据间隔等
 顶点输入属性描述 | VkVertexInputAttributeDescription | 描述顶点输入的某项数据信息（比如顶点位置、顶点颜色），包括绑定点编号、位置编号、<br>数据格式、偏移量等
 管线缓冲 | VkPipelineCache | 为高效地创建管线提供支持
-
+格式属性 | VkFormatProperties | 用于存储指定格式类型（比如 VK_FORMAT_D16_UNORM）的格式属性，包括线性瓦片特征标志、最优化瓦片特性标志、<br>缓冲特性标志等
+物理设备内存属性 | VkPhysicalDeviceMemoryProperties  | 用于存储获取的基于指定GPU的设备内存属性，包括内存类型数量、内存类型列表、内存堆数量、<br>内存堆列表等
+设备内存 | VkDeviceMemory | 设备内存的逻辑抽象，前面提到的缓冲（VkBuffer）和图像（VkImaghe）必须绑定到设备内存才能正常工作
+信号量 | VkSemaphore | 用于一个设备GPU内部相同或者不同队列并发执行任务时的同步工作，一般与方法VkQueueSubmit配合使用，以确保通过VkQueueSubmit<br>方法提交的任务在指定信号量未触发前阻塞直至信号量触发后才执行。要特别注意：若有多个提交的任务同时等待同一个信号量触发，则此<br>信号量的触发仅仅会被一个等待的任务接收到，其他等待的任务继续等待。这里的同步是指并发执行任务是解决冲突的一种策略，与实际情<br>况，具体分析
+栅栏 | VkFence | 用于主机和设备之间的同步，通俗的讲就是用于CPU和GPU并发执行任务时的同步
+KHR表面 | VkSurfaceKHR | 此类对象服务于帧画面的呈现
+KHR表面能力 | VkSurfaceCapabilitiesKHR | 携带了用于呈现画面的表面相关呈现能力的信息，比如画面尺寸范围、交换链中的图像数量、是否支持屏幕变换等
+呈现信息 | VkPresentInfoKHR | 携带了执行呈现时所需要的结构体信息，包括需要等待的信号量数量、信号量列表、交换链的数量、交换链列表、此呈现的图像在<br>交换链中的索引等
 
 
 
