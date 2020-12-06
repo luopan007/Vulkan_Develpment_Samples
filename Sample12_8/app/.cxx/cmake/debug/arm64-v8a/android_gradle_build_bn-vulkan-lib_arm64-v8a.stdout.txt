@@ -1,0 +1,14 @@
+[1/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o
+[2/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o
+[3/14] Building C object CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o
+[4/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o
+[5/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o
+[6/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDrawableObject.cpp.o
+[7/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o
+[8/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o
+[9/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_Common.cpp.o
+[10/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o
+[11/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/FlatData.cpp.o
+[12/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o
+[13/14] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o
+[14/14] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libbn-vulkan-lib.so

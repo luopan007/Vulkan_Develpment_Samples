@@ -1,0 +1,26 @@
+# ninja log v5
+3	131	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o	bd2ca3a0263f34d1
+9	146	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o	80a857d659f4647f
+5	197	0	CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o	a4f1eec3c436e619
+13	223	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o	15011f7621afda2a
+131	253	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o	e8ee0793be69aab7
+1	317	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o	d91941930b46f883
+11	343	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o	f8c18d7371e6111e
+197	409	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o	3d5ebbb00255947a
+15	446	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ParticleSystem.cpp.o	c55498b2c6577523
+7	494	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o	6bbf0ef87f943928
+224	554	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/CameraUtil.cpp.o	96860a1fcb293acc
+446	585	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ParticleDataConstant.cpp.o	e4f3dac0e17222b6
+317	612	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ParticleForDraw.cpp.o	182e832de6e23c9a
+253	652	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o	f1f14a4b29387126
+409	664	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/FlatData.cpp.o	2e13104ac63a15b5
+147	845	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o	b79d4729e2994255
+343	899	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticle.cpp.o	b2b87d8ed7b6436
+612	1010	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o	6feba4328d2e965f
+555	1037	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleFour.cpp.o	1f71ee89a598f8a8
+653	1060	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o	3a583d01aeddd110
+585	1116	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTex.cpp.o	9f6d622bb9141e9b
+664	1171	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleThree.cpp.o	741b46a8536ce468
+846	1282	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleTwo.cpp.o	aab8e57575e20939
+494	1471	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o	99e75a45cdf79a75
+1471	2031	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libbn-vulkan-lib.so	fca91245d273ad6b

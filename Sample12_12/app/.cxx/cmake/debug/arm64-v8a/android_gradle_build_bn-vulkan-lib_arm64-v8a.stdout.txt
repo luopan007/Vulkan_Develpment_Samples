@@ -1,0 +1,24 @@
+[1/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ThreeDTexDataObject.cpp.o
+[2/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o
+[3/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o
+[4/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o
+[5/17] Building C object CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o
+[6/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o
+[7/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o
+[8/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o
+[9/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o
+[10/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o
+[11/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o
+[12/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LightManager.cpp.o
+[13/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o
+[14/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTex.cpp.o
+[15/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o
+[16/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample12_12\app\src\main\cpp\util\TextureManager.cpp:86:18: warning: unused variable 'result' [-Wunused-variable]
+        VkResult result = vk::vkCreateSampler(device, &samplerCreateInfo, NULL, &samplerTexture);
+                 ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_12\app\src\main\cpp\util\TextureManager.cpp:162:10: warning: unused variable 'flag' [-Wunused-variable]
+    bool flag = memoryTypeFromProperties(memoryroperties, mem_reqs.memoryTypeBits, 0, &mem_alloc.memoryTypeIndex);
+         ^
+2 warnings generated.
+[17/17] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libbn-vulkan-lib.so

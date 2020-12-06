@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "D:\\Project\\Vulkan_Develpment_Samples\\Sample12_14\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\luopan\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Project\\Vulkan_Develpment_Samples\\Sample12_14\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "shaderc_lib-Debug-armeabi-v7a": {
+      "artifactName": "shaderc_lib",
+      "abi": "armeabi-v7a",
+      "output": "C:\\Users\\luopan\\AppData\\Local\\Android\\Sdk\\ndk\\android-ndk-r13b\\sources\\third_party\\shaderc\\libs\\gnustl_static\\armeabi-v7a\\libshaderc.a"
+    },
+    "bn-vulkan-lib-Debug-armeabi-v7a": {
+      "artifactName": "bn-vulkan-lib",
+      "buildCommand": "C:\\Users\\luopan\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Project\\Vulkan_Develpment_Samples\\Sample12_14\\app\\.cxx\\cmake\\debug\\armeabi-v7a --target bn-vulkan-lib",
+      "abi": "armeabi-v7a",
+      "output": "D:\\Project\\Vulkan_Develpment_Samples\\Sample12_14\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libbn-vulkan-lib.so"
+    }
+  }
+}

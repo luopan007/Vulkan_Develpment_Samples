@@ -1,0 +1,3 @@
+D:/Project/Vulkan_Develpment_Samples/Sample12_7/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/bn-vulkan-lib.dir
+D:/Project/Vulkan_Develpment_Samples/Sample12_7/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Project/Vulkan_Develpment_Samples/Sample12_7/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,42 @@
+[1/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o
+[2/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o
+[3/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o
+[4/17] Building C object CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o
+[5/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o
+[6/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o
+[7/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/CameraUtil.cpp.o
+[8/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDrawableObject.cpp.o
+[9/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexDouble.cpp.o
+[10/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o
+[11/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/LandData.cpp.o
+[12/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o
+[13/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o
+[14/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o
+[15/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample12_13\app\src\main\cpp\bndev\LandData.cpp:33:26: warning: format specifies type 'double' but the argument has type 'int' [-Wformat]
+    LOGE("cols%f,rows%f",cols,rows);
+              ~~         ^~~~
+              %d
+../../../../src/main/cpp/bndev\mylog.h:6:84: note: expanded from macro 'LOGE'
+#define LOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, "native-activity", __VA_ARGS__))
+                                                                                   ^~~~~~~~~~~
+D:\Project\Vulkan_Develpment_Samples\Sample12_13\app\src\main\cpp\bndev\LandData.cpp:33:31: warning: format specifies type 'double' but the argument has type 'int' [-Wformat]
+    LOGE("cols%f,rows%f",cols,rows);
+                     ~~       ^~~~
+                     %d
+../../../../src/main/cpp/bndev\mylog.h:6:84: note: expanded from macro 'LOGE'
+#define LOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, "native-activity", __VA_ARGS__))
+                                                                                   ^~~~~~~~~~~
+2 warnings generated.
+[16/17] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample12_13\app\src\main\cpp\util\TextureManager.cpp:89:18: warning: unused variable 'result' [-Wunused-variable]
+        VkResult result = vk::vkCreateSampler(device, &samplerCreateInfo, NULL, &samplerTexture);
+                 ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_13\app\src\main\cpp\util\TextureManager.cpp:253:14: warning: unused variable 'flag' [-Wunused-variable]
+        bool flag = memoryTypeFromProperties(memoryroperties, mem_reqs.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, &mem_alloc.memoryTypeIndex);
+             ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_13\app\src\main\cpp\util\TextureManager.cpp:279:14: warning: unused variable 'result' [-Wunused-variable]
+    VkResult result = vk::vkCreateImageView(device, &view_info, NULL, &viewTexture);
+             ^
+3 warnings generated.
+[17/17] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libbn-vulkan-lib.so

@@ -1,0 +1,139 @@
+[1/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o
+[2/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o
+[3/25] Building C object CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o
+[4/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o
+[5/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o
+[6/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o
+[7/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ParticleSystem.cpp.o
+[8/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o
+[9/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/CameraUtil.cpp.o
+[10/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ParticleForDraw.cpp.o
+[11/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o
+[12/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o
+[13/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o
+[14/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o
+[15/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTex.cpp.o
+In file included from D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\util\ParticleForDraw.cpp:6:
+../../../../src/main/cpp/bndev\ParticleDataConstant.cpp:50:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,7.0f,
+        ^~~~~~~~~
+        {        }
+../../../../src/main/cpp/bndev\ParticleDataConstant.cpp:51:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,-7.0f,
+        ^~~~~~~~~~~
+        {          }
+../../../../src/main/cpp/bndev\ParticleDataConstant.cpp:52:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,7.0f,
+        ^~~~~~~~~~
+        {         }
+../../../../src/main/cpp/bndev\ParticleDataConstant.cpp:53:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,-7.0f,
+        ^~~~~~~~~~
+        {         }
+4 warnings generated.
+[16/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o
+In file included from D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleSystem.cpp:6:
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:50:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,7.0f,
+        ^~~~~~~~~
+        {        }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:51:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,-7.0f,
+        ^~~~~~~~~~~
+        {          }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:52:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,7.0f,
+        ^~~~~~~~~~
+        {         }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:53:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,-7.0f,
+        ^~~~~~~~~~
+        {         }
+4 warnings generated.
+[17/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o
+[18/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleFour.cpp.o
+[19/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleThree.cpp.o
+[20/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o
+[21/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ParticleDataConstant.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\util\TextureManager.cpp:86:18: warning: unused variable 'result' [-Wunused-variable]
+        VkResult result = vk::vkCreateSampler(device, &samplerCreateInfo, NULL, &samplerTexture);
+                 ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\util\TextureManager.cpp:250:14: warning: unused variable 'flag' [-Wunused-variable]
+        bool flag = memoryTypeFromProperties(memoryroperties, mem_reqs.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, &mem_alloc.memoryTypeIndex);
+             ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\util\TextureManager.cpp:276:14: warning: unused variable 'result' [-Wunused-variable]
+    VkResult result = vk::vkCreateImageView(device, &view_info, NULL, &viewTexture);
+             ^
+3 warnings generated.
+[22/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/FlatData.cpp.o
+[23/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticleTwo.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:50:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,7.0f,
+        ^~~~~~~~~
+        {        }
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:51:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,-7.0f,
+        ^~~~~~~~~~~
+        {          }
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:52:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,7.0f,
+        ^~~~~~~~~~
+        {         }
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:53:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,-7.0f,
+        ^~~~~~~~~~
+        {         }
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:1:13: warning: unused variable 'X_RANGE' [-Wunused-const-variable]
+const float X_RANGE[]={//<U+7C92><U+5B50><U+53D1><U+5C04><U+7684>x <U+8303><U+56F4>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:7:13: warning: unused variable 'Y_RANGE' [-Wunused-const-variable]
+const float Y_RANGE[]={//<U+7C92><U+5B50><U+53D1><U+5C04><U+7684>y <U+8303><U+56F4>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:13:13: warning: unused variable 'RADIS' [-Wunused-const-variable]
+const float RADIS[] ={//<U+6BCF><U+4E2A><U+7C92><U+5B50><U+7684><U+534A><U+5F84>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:19:11: warning: unused variable 'COUNT' [-Wunused-const-variable]
+const int COUNT[]= {//<U+7C92><U+5B50><U+6570><U+91CF>
+          ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:25:11: warning: unused variable 'GROUP_COUNT' [-Wunused-const-variable]
+const int GROUP_COUNT[]= {//<U+6BCF><U+6279><U+6FC0><U+6D3B><U+7684><U+7C92><U+5B50><U+6570><U+91CF>
+          ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:31:13: warning: unused variable 'LIFE_SPAN_STEP' [-Wunused-const-variable]
+const float LIFE_SPAN_STEP[]={//<U+6BCF><U+4E2A><U+7C92><U+5B50><U+751F><U+547D><U+5468><U+671F><U+6B65><U+8FDB>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:37:13: warning: unused variable 'MAX_LIFE_SPAN' [-Wunused-const-variable]
+const float MAX_LIFE_SPAN[]={//<U+6BCF><U+4E2A><U+7C92><U+5B50><U+6700><U+5927><U+751F><U+547D><U+5468><U+671F>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:43:13: warning: unused variable 'VY' [-Wunused-const-variable]
+const float VY[]={//<U+6BCF><U+4E2A><U+7C92><U+5B50>Y <U+65B9><U+5411><U+901F><U+5EA6>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:49:13: warning: unused variable 'ParticlePositon' [-Wunused-const-variable]
+const float ParticlePositon[4][2]={//<U+7C92><U+5B50><U+7CFB><U+7EDF><U+4F4D><U+7F6E>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:55:13: warning: unused variable 'START_COLOR' [-Wunused-const-variable]
+const float START_COLOR[4][4]={//<U+7C92><U+5B50><U+7684><U+8D77><U+59CB><U+989C><U+8272>
+            ^
+D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\ParticleDataConstant.cpp:61:13: warning: unused variable 'END_COLOR' [-Wunused-const-variable]
+const float END_COLOR[4][4]={//<U+7C92><U+5B50><U+7684><U+7EC8><U+6B62><U+989C><U+8272>
+            ^
+15 warnings generated.
+[24/25] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexParticle.cpp.o
+In file included from D:\Project\Vulkan_Develpment_Samples\Sample12_14\app\src\main\cpp\bndev\MyVulkanManager.cpp:20:
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:50:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,7.0f,
+        ^~~~~~~~~
+        {        }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:51:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,-7.0f,
+        ^~~~~~~~~~~
+        {          }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:52:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        -7.0f,7.0f,
+        ^~~~~~~~~~
+        {         }
+../../../../src/main/cpp/bndev/ParticleDataConstant.cpp:53:9: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+        7.0f,-7.0f,
+        ^~~~~~~~~~
+        {         }
+4 warnings generated.
+[25/25] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libbn-vulkan-lib.so
