@@ -1,0 +1,102 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_420pack : enable
+
+//用于传输顶点数据的结构体，每个实例包含一个顶点的数据
+//8个浮点数 分别为顶点XYZ坐标、顶点ST纹理坐标、顶点法向量XYZ分量
+//传输中必须用vec4，否则可能出幺蛾子
+struct myVert
+{
+   vec4 a;
+   vec4 b;
+};
+
+//原始顶点数据的数据缓冲
+layout( std140, binding=0 ) buffer dataFrom
+{
+   myVert vertsFrom[ ];
+};
+
+//处理后顶点数据的缓冲
+layout( std140, binding=1 ) writeonly buffer dataTo
+{
+   myVert vertsTo[ ];
+};
+
+//输入布局限定符声明一个1X1X1的本地工作组----gl_WorkGroupSize
+layout( local_size_x = 1, local_size_y = 1, local_size_z = 1 ) in;
+
+//接收三个正弦波控制参数的uniform块
+//每组正弦波控制参数包含5个值，分别为波心xy、波长、振幅、起始角
+//注意：传输的是16个浮点数，是因为不是四的整数倍出幺蛾子，最后空置一个
+layout (std140,set = 0, binding = 2) uniform bufferVals {
+    vec4 a;
+    vec4 b;
+    vec4 c;
+    vec4 d;
+} myBufferVals;
+
+//计算一个波对指定点的高度扰动
+float calHdr
+(
+	vec2 bx,	//波心
+	float bc,	//波长
+	float zf,	//振幅
+	float qsj,	//起始角
+	vec2 ddxz	//被扰动的顶点xz坐标
+)
+{
+    //计算与波心的距离
+    float dis=distance(ddxz,bx);
+    //算出角度跨度
+    float angleSpan=dis*2.0*3.1415926/bc;
+    //计算此波对此顶点的振幅扰动
+    float hrd=sin(angleSpan+qsj)*zf;
+    //返回高度扰动值
+    return hrd;
+}
+
+void main() {
+    //算出顶点的索引
+    uint indexTemp=gl_NumWorkGroups.x*gl_WorkGroupID.y+gl_WorkGroupID.x;
+
+    //取出顶点相关数据=========================================================begin================
+    //取出顶点的位置
+    vec3 positionTemp=vertsFrom[indexTemp].a.xyz;
+    //取出顶点的纹理坐标
+    vec2 texCoorTemp=vec2(vertsFrom[indexTemp].a.w,vertsFrom[indexTemp].b.x);
+    //取出顶点的法向量
+    vec3 normalTemp=vertsFrom[indexTemp].b.yzw;
+    //取出顶点相关数据=========================================================end==================
+
+    //取出FFT控制数据==========================================================begin================
+    vec2 bx1=myBufferVals.a.xy;	//波心1
+    float bc1=myBufferVals.a.z;	//波长1
+    float zf1=myBufferVals.a.w;  //振幅1
+    float qsj1=myBufferVals.b.x; //起始角1
+
+    vec2 bx2=myBufferVals.b.yz;	//波心2
+    float bc2=myBufferVals.b.w;	//波长2
+    float zf2=myBufferVals.c.x;  //振幅2
+    float qsj2=myBufferVals.c.y; //起始角2
+
+    vec2 bx3=myBufferVals.c.zw; //波心3
+    float bc3=myBufferVals.d.x;	//波长3
+    float zf3=myBufferVals.d.y;  //振幅3
+    float qsj3=myBufferVals.d.z; //起始角3
+    //取出FFT控制数据==========================================================end==================
+
+    //计算三个波对顶点的高度扰动值并叠加
+    positionTemp.y=calHdr(bx1,bc1,zf1,qsj1,positionTemp.xz)+
+                                     calHdr(bx2,bc2,zf2,qsj2,positionTemp.xz)+
+                                     calHdr(bx3,bc3,zf3,qsj3,positionTemp.xz);
+    //写出顶点相关数据=========================================================begin================
+    //写出顶点位置
+    vertsTo[indexTemp].a.xyz=positionTemp;
+    //写出顶点纹理坐标
+    vertsTo[indexTemp].a.w=texCoorTemp.s;
+    vertsTo[indexTemp].b.x=texCoorTemp.t;
+    //写出顶点法向量
+    vertsTo[indexTemp].b.yzw=normalTemp.xyz;
+    //写出顶点相关数据=========================================================end==================
+}

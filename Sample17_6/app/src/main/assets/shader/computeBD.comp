@@ -1,0 +1,59 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_420pack : enable
+
+struct myVert{ //用于表示顶点数据的结构体
+vec4 a; //前四个分量
+vec4 b; //后四个分量
+};
+layout( std140, binding=0 ) buffer dataFrom{ //原始顶点数据缓冲
+myVert vertsFrom[ ]; //原始顶点数据数组
+};
+layout( std140, binding=1 ) writeonly buffer dataTo{ //结果顶点数据缓冲
+myVert vertsTo[ ]; //结果顶点数据数组
+};
+layout( local_size_x = 1, local_size_y = 1, local_size_z = 1 ) in; //输入布局限定符
+layout (std140,set = 0, binding = 2) uniform bufferVals { //一致变量块
+vec4 a; //正弦波控制参数1
+vec4 b; //正弦波控制参数2
+vec4 c; //正弦波控制参数3
+vec4 d; //正弦波控制参数4
+} myBufferVals;
+float calHdr( //计算一个波对指定点的高度扰动
+vec2 bx, //波心坐标
+float bc, //波长
+float zf, //振幅
+float qsj, //起始角
+vec2 ddxz //被扰动的顶点xz 坐标
+){
+float dis=distance(ddxz,bx); //计算与波心的距离
+float angleSpan=dis*2.0*3.1415926/bc; //计算角度跨度
+float hrd=sin(angleSpan+qsj)*zf; //计算此波对此顶点的振幅扰动
+return hrd; //返回高度扰动值
+}
+void main() {
+    uint indexTemp=gl_NumWorkGroups.x*gl_WorkGroupID.y+gl_WorkGroupID.x; //计算顶点的索引
+    vec3 positionTemp=vertsFrom[indexTemp].a.xyz; //取出顶点位置
+    vec2 texCoorTemp=vec2(vertsFrom[indexTemp].a.w,vertsFrom[indexTemp].b.x);//取出顶点纹理坐标
+    vec3 normalTemp=vertsFrom[indexTemp].b.yzw; //取出顶点的法向量
+    vec2 bx1=myBufferVals.a.xy; //第一组波心
+    float bc1=myBufferVals.a.z; //第一组波长
+    float zf1=myBufferVals.a.w; //第一组振幅
+    float qsj1=myBufferVals.b.x; //第一组起始角
+    vec2 bx2=myBufferVals.b.yz;	//波心2
+    float bc2=myBufferVals.b.w;	//波长2
+    float zf2=myBufferVals.c.x;  //振幅2
+    float qsj2=myBufferVals.c.y; //起始角2
+    vec2 bx3=myBufferVals.c.zw; //波心3
+    float bc3=myBufferVals.d.x;	//波长3
+    float zf3=myBufferVals.d.y;  //振幅3
+    float qsj3=myBufferVals.d.z; //起始角3
+    positionTemp.y=calHdr(bx1,bc1,zf1,qsj1,positionTemp.xz)+//计算三个波对顶点的高度扰动值并叠加
+                                       calHdr(bx2,bc2,zf2,qsj2,positionTemp.xz)+
+                                       calHdr(bx3,bc3,zf3,qsj3,positionTemp.xz);
+    vertsTo[indexTemp].a.xyz=positionTemp; //传出顶点位置
+    vertsTo[indexTemp].a.w=texCoorTemp.s; //传出顶点纹理坐标S
+    vertsTo[indexTemp].b.x=texCoorTemp.t; //传出顶点纹理坐标T
+    vertsTo[indexTemp].b.yzw=normalTemp.xyz; //传出顶点法向量
+
+}

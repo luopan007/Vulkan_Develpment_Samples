@@ -1,0 +1,84 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_420pack : enable
+
+//用于传输顶点数据的结构体，每个实例包含一个顶点的数据
+//8个浮点数 分别为顶点XYZ坐标、顶点ST纹理坐标、顶点法向量XYZ分量
+//传输中必须用vec4，否则可能出幺蛾子
+struct myVert
+{
+   vec4 a;
+   vec4 b;
+};
+
+//顶点数据的数据缓冲
+layout( std140, binding=0 ) buffer dataFromTo
+{
+   myVert vertsFromTo[ ];
+};
+
+//输入布局限定符声明一个1X1X1的本地工作组----gl_WorkGroupSize
+layout( local_size_x = 1, local_size_y = 1, local_size_z = 1 ) in;
+
+//知道三角形三个点的坐标，计算三角形面法向量的方法
+vec3 calNormal(vec3 a,vec3 b,vec3 c)
+{
+   vec3 vab=b-a;//求a点到b点的向量
+   vec3 vac=c-a;//求a点到c点的向量
+   return normalize(cross(vab,vac));  //返回最终法向量值
+}
+
+//获取指定编号的顶点坐标的方法
+vec3 getSpecPosition(uint indexIn)
+{
+    return vertsFromTo[indexIn].a.xyz;
+}
+
+//叠加指定编号顶点法向量的方法
+void addSpecNormal(vec3 normalIn,uint indexIn)
+{
+    vertsFromTo[indexIn].b.yzw+=normalIn;
+}
+
+void main()
+{
+    //算出顶点的索引
+    uint indexTemp=gl_NumWorkGroups.x*gl_WorkGroupID.y+gl_WorkGroupID.x;
+
+    //三角形编号指南
+    //0---1
+    //| / |
+    //3---2
+
+    //若当前顶点不是最后一列，且不是最后一行
+    if(gl_WorkGroupID.x<(gl_NumWorkGroups.x-uint(1))&&gl_WorkGroupID.y<(gl_NumWorkGroups.y-uint(1)))
+    {
+       //计算0-3-1三角形法向量
+       //逆时针a点
+       vec3 a=getSpecPosition(indexTemp);
+       //逆时针b点
+       vec3 b=getSpecPosition(indexTemp+gl_NumWorkGroups.x);
+       //逆时针c点
+       vec3 c=getSpecPosition(indexTemp+uint(1));
+       //计算此三角形法向量
+       vec3 normal=calNormal(a,b,c);
+       //给三个顶点叠加法向量
+       addSpecNormal(normal,indexTemp);
+       addSpecNormal(normal,indexTemp+gl_NumWorkGroups.x);
+       addSpecNormal(normal,indexTemp+uint(1));
+
+       //计算1-3-2三角形法向量
+       //逆时针a点
+       a=getSpecPosition(indexTemp+uint(1));
+       //逆时针b点
+       b=getSpecPosition(indexTemp+gl_NumWorkGroups.x);
+       //逆时针c点
+       c=getSpecPosition(indexTemp+uint(1)+gl_NumWorkGroups.x);
+       //计算此三角形法向量
+       normal=calNormal(a,b,c);
+       //给三个顶点叠加法向量
+       addSpecNormal(normal,indexTemp+uint(1));
+       addSpecNormal(normal,indexTemp+gl_NumWorkGroups.x);
+       addSpecNormal(normal,indexTemp+uint(1)+gl_NumWorkGroups.x);
+    }
+}
