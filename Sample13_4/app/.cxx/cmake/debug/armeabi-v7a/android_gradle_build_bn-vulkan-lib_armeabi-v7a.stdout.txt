@@ -1,0 +1,32 @@
+[1/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o
+[2/19] Building C object CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o
+[3/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o
+[4/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o
+[5/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o
+[6/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o
+[7/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDrawableObject.cpp.o
+[8/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o
+[9/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/CameraUtil.cpp.o
+[10/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o
+[11/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o
+[12/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_Cubemap.cpp.o
+[13/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o
+[14/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o
+[15/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o
+[16/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o
+[17/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o
+[18/19] Building CXX object CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTex.cpp.o
+D:\Project\Vulkan_Develpment_Samples\Sample13_4\app\src\main\cpp\util\TextureManager.cpp:205:18: warning: unused variable 'result' [-Wunused-variable]
+        VkResult result = vk::vkCreateSampler(device, &samplerCreateInfo, NULL, &samplerTexture);
+                 ^
+D:\Project\Vulkan_Develpment_Samples\Sample13_4\app\src\main\cpp\util\TextureManager.cpp:423:14: warning: unused variable 'flag' [-Wunused-variable]
+        bool flag = memoryTypeFromProperties(memoryroperties, mem_reqs.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, &mem_alloc.memoryTypeIndex);
+             ^
+D:\Project\Vulkan_Develpment_Samples\Sample13_4\app\src\main\cpp\util\TextureManager.cpp:459:14: warning: unused variable 'result' [-Wunused-variable]
+    VkResult result = vk::vkCreateImageView(device, &view_info, NULL, &viewTexture);
+             ^
+D:\Project\Vulkan_Develpment_Samples\Sample13_4\app\src\main\cpp\util\TextureManager.cpp:554:10: warning: unused variable 'flag' [-Wunused-variable]
+    bool flag = memoryTypeFromProperties(memoryroperties, mem_reqs.memoryTypeBits, 0, &mem_alloc.memoryTypeIndex);
+         ^
+4 warnings generated.
+[19/19] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libbn-vulkan-lib.so

@@ -1,0 +1,20 @@
+# ninja log v5
+5	144	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o	1039ca21a8c8ea
+0	212	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o	a673b4511900e33
+9	217	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o	b808d205a132d889
+3	225	0	CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o	a4f1eec3c436e619
+19	362	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o	73717733f5aac4f3
+11	388	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o	c72db93aebf5bc69
+225	414	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o	9100b4b4d3fb06f7
+7	478	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o	5b7544200ddabaea
+362	526	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/CameraUtil.cpp.o	b40cebeabc9e348b
+212	531	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDrawableObject.cpp.o	9983ebad40448638
+388	553	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o	8f216cb3d39f0d28
+14	583	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o	8c8d601f5f97461
+217	621	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o	e1c2e1aded411c15
+171	659	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_Cubemap.cpp.o	44e027eea3437af1
+527	754	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o	e4f6da99e50db20a
+531	779	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o	9a2554b52c508621
+414	835	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTex.cpp.o	73f995474f43f509
+479	1274	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o	530f29fd23aa8bfb
+1274	1675	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libbn-vulkan-lib.so	7a6efe59667e218d

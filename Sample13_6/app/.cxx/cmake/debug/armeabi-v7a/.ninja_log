@@ -1,0 +1,22 @@
+# ninja log v5
+16	212	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LightManager.cpp.o	aff2bbf964c98d3c
+8	218	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/HelpFunction.cpp.o	20342856b04fd6c
+0	265	0	CMakeFiles/bn-vulkan-lib.dir/C_/Users/luopan/AppData/Local/Android/Sdk/ndk/android-ndk-r13b/sources/android/native_app_glue/android_native_app_glue.c.o	683b8b386c394b73
+6	293	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/MatrixState3D.cpp.o	a0e83db431df9cc9
+3	298	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/vksysutil/vulkan_wrapper.cpp.o	f531706469e144e8
+14	304	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/EYYCFCUtil.cpp.o	9aa9625a252cf23
+4	357	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FileUtil.cpp.o	d8ca721b4a620b02
+213	561	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TexDataObject.cpp.o	273ed8b19a99930b
+218	565	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObjectUt.cpp.o	9cbf0d6aad0b6df4
+304	624	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/ObjObject.cpp.o	60a312728757198c
+293	701	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/FPSUtil.cpp.o	7a673f9d20daa6a4
+18	718	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/TextureManager.cpp.o	7c7c0764834682fd
+299	730	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/QKJUtil.cpp.o	3e5ace0f07ae5f01
+565	911	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ThreadTask.cpp.o	f1b4465ce21b3ac4
+266	912	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/util/LoadUtil.cpp.o	8d5f1c3dad76dba3
+357	1026	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_CommonTexUt.cpp.o	97a0718a0d6738cc
+624	1030	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderCompileUtil.cpp.o	4e4fcdd573fad1b0
+702	1059	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/main.cpp.o	94dcbc64667849ba
+561	1134	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/ShaderQueueSuit_Common.cpp.o	daed93ffe5db07f
+719	1739	0	CMakeFiles/bn-vulkan-lib.dir/src/main/cpp/bndev/MyVulkanManager.cpp.o	8c78ab3ebe3cfc63
+1739	2066	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libbn-vulkan-lib.so	487134fdddef9841

@@ -1,0 +1,8 @@
+Executable : C:\Users\luopan\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+--build
+D:\Project\Vulkan_Develpment_Samples\Sample13_7\app\.cxx\cmake\debug\armeabi-v7a
+--target
+bn-vulkan-lib
+jvmArgs : 
+
