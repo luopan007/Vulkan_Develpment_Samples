@@ -1,0 +1,80 @@
+#version 450
+#extension GL_EXT_tessellation_shader : enable
+layout (push_constant) uniform constantVals {
+	layout(offset = 80) mat4 mm;
+} myConstantVals;
+layout( triangles, equal_spacing, cw) in;
+layout (location = 0) in vec3 tesNormal[];
+layout (location = 1) in vec2 tesTexCoor[];
+layout (location = 0) out vec3 teNormal;
+layout (location = 1) out vec2 vTexCoor;
+layout (location = 2) out vec3 vPosition;
+layout (location = 3) out vec3 teNormalOri;
+vec3 PNCalInterpolation(vec3 p1,vec3 p2,vec3 p3,vec3 n1,vec3 n2,vec3 n3,float u,float v,float w)
+{
+   	vec3 b300 = p1;
+	vec3 b030 = p2;
+	vec3 b003 = p3;
+	float w12 = dot( p2 - p1, n1 );
+	float w21 = dot( p1 - p2, n2 );
+	float w13 = dot( p3 - p1, n1 );
+	float w31 = dot( p1 - p3, n3 );
+	float w23 = dot( p3 - p2, n2 );
+	float w32 = dot( p2 - p3, n3 );
+	vec3 b210 = ( 2.*p1 + p2 - w12*n1 ) / 3.;
+	vec3 b120 = ( 2.*p2 + p1 - w21*n2 ) / 3.;
+	vec3 b021 = ( 2.*p2 + p3 - w23*n2 ) / 3.;
+	vec3 b012 = ( 2.*p3 + p2 - w32*n3 ) / 3.;
+	vec3 b102 = ( 2.*p3 + p1 - w31*n3 ) / 3.;
+	vec3 b201 = ( 2.*p1 + p3 - w13*n1 ) / 3.;
+	vec3 ee = ( b210 + b120 + b021 + b012 + b102 + b201 ) / 6.;
+	vec3 vv = ( p1 + p2 + p3 ) / 3.;
+	vec3 b111 = ee + ( ee - vv ) / 2.;
+	vec3 xyz = 1.*b300*w*w*w + 1.*b030*u*u*u + 1.*b003*v*v*v +
+	3.*b210*u*w*w + 3.*b120*u*u*w + 3.*b201*v*w*w +
+	3.*b021*u*u*v + 3.*b102*v*v*w + 3.*b012*u*v*v +
+	6.*b111*u*v*w;
+	return xyz;
+}
+vec3 PNCalNormal(vec3 p1,vec3 p2,vec3 p3,vec3 n1,vec3 n2,vec3 n3,float u,float v,float w)
+{
+    float v12 = 2. * dot( p2-p1, n1+n2 ) / dot( p2-p1, p2-p1 );
+	float v23 = 2. * dot( p3-p2, n2+n3 ) / dot( p3-p2, p3-p2 );
+	float v31 = 2. * dot( p1-p3, n3+n1 ) / dot( p1-p3, p1-p3 );
+	vec3 n200 = n1;
+	vec3 n020 = n2;
+	vec3 n002 = n3;
+	vec3 n110 = normalize( n1 + n2 - v12*(p2-p1) );
+	vec3 n011 = normalize( n2 + n3 - v23*(p3-p2) );
+	vec3 n101 = normalize( n3 + n1 - v31*(p1-p3) );
+	vec3 currNormal = n200*w*w + n020*u*u + n002*v*v +
+					  n110*w*u + n011*u*v + n101*w*v;
+	return normalize(currNormal);
+}
+void main( )
+{
+	vec3 p1 = gl_in[0].gl_Position.xyz;
+	vec3 p2 = gl_in[1].gl_Position.xyz;
+	vec3 p3 = gl_in[2].gl_Position.xyz;
+	vec3 n1 = tesNormal[ 0 ];
+	vec3 n2 = tesNormal[ 1 ];
+	vec3 n3 = tesNormal[ 2 ];	
+	vec3 t1 = vec3(tesTexCoor[0],0);
+	vec3 t2 = vec3(tesTexCoor[1],0);
+	vec3 t3 = vec3(tesTexCoor[2],0);
+	float u = gl_TessCoord.x;
+	float v = gl_TessCoord.y;
+	float w = gl_TessCoord.z;
+    vec3 currPosition=PNCalInterpolation(p1,p2,p3,n1,n2,n3,u,v,w);
+	vPosition=(myConstantVals.mm * vec4(currPosition,1)).xyz;
+	gl_Position=vec4(currPosition,1);
+    vec3 tempTexCoor=PNCalInterpolation(t1,t2,t3,n1,n2,n3,u,v,w);  
+	vTexCoor= tempTexCoor.st;	
+	vec3 currNormal=PNCalNormal(p1,p2,p3,n1,n2,n3,u,v,w);
+	vec4 fxlStart=vec4(0,0,0,1);
+	vec4 fxlEnd=vec4(currNormal,1);
+	fxlStart=myConstantVals.mm * fxlStart;
+	fxlEnd=myConstantVals.mm * fxlEnd;
+	teNormal=(fxlEnd-fxlStart).xyz;
+	teNormalOri=currNormal;
+}

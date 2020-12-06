@@ -1,0 +1,21 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_420pack : enable
+layout (push_constant) uniform constantVals {
+	layout(offset = 144) vec4 tesFactor;
+} myConstantValsTcs;
+layout(vertices=3) out;
+layout (location = 0)  in vec3 tcsNormal[];
+layout (location = 1) in vec2 tcsTexCoor[];
+layout (location = 0) out vec3 tesNormal[3];
+layout (location = 1) out vec2 tesTexCoor[3];
+void main( )
+{
+	gl_out[gl_InvocationID].gl_Position=gl_in[gl_InvocationID].gl_Position;
+    tesNormal[gl_InvocationID]=tcsNormal[gl_InvocationID];	
+    tesTexCoor[gl_InvocationID]=tcsTexCoor[gl_InvocationID];	   
+	gl_TessLevelOuter[0] = myConstantValsTcs.tesFactor[0];
+	gl_TessLevelOuter[1] = myConstantValsTcs.tesFactor[1];
+	gl_TessLevelOuter[2] = myConstantValsTcs.tesFactor[2];
+	gl_TessLevelInner[0] = myConstantValsTcs.tesFactor[3];
+}
